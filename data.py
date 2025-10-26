@@ -3,9 +3,9 @@ import json
 
 
 BUBBLE_API_URL = "https://app.planmyfirm.com/version-test/api/1.1/obj"
-TABLE_NAME = "visapackage"
+TABLE_NAME = "visaadditionaldocs"
 HEADERS = {
-    "Authorization":"Bearer fd6c8e722db483d0e835146491fe3a29",
+
     "Content-Type": "application/json"
 }
 
