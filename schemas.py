@@ -1,0 +1,58 @@
+from sqlalchemy import (Column, DateTime, String, Text, create_engine,)
+from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
+
+class License(Base):
+    __tablename__ = "License"
+    id = Column(String)
+    business_name = Column(String)
+    owner_id = Column(String)
+    issuing_authority = Column(String)
+    emirate = Column(String)
+    legal_type = Column(String)
+    license_type = Column(String)
+    license_number = Column(String)
+    immigration_number = Column(String)
+    description = Column(Text)
+    status = Column(String)
+    activities = Column(JSONB)
+    issue_date = Column(DateTime)
+    expiry_date = Column(DateTime)
+    contact_address = Column(Text)
+    contact_phone = Column(String)
+    contact_mobile = Column(String)
+    contact_email = Column(String)
+    created_at = Column(DateTime)
+    updated_at = Column(DateTime)
+    members = Column(JSONB)
+    shareholders = Column(JSONB)
+    visas = Column(JSONB)
+    office_bookings = Column(JSONB)
+
+
+class Visa(Base):
+    __tablename__ = "visa"
+    id = Column(String,primary_key=True)
+    license_id = Column(String)
+    person_image = Column(String)
+    person_name = Column(String)
+    person_nationality = Column(String)
+    person_passport_number = Column(String)
+    person_dob = Column(DateTime)
+    person_gender = Column(String)
+    person_emirates_id = Column(String)
+    file_number = Column(String)
+    type = Column(String)
+    status = Column(String)
+    issue_date = Column(DateTime)
+    expiry_date = Column(DateTime)
+    issue_place = Column(String)
+    uid = Column(String)
+    issue_authority = Column(String)
+    work_permit = Column(String)
+    labour_number = Column(String)
+    created_at = Column(DateTime)
+    updated_at = Column(DateTime)
+    documents = Column(JSONB)
